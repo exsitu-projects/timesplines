@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/index.css" rel="stylesheet">
+    <title>TimeSplines Supplemental Material`</title>
+</head>
+
+<body>
+    <br>
+    <h1 id="paper-title">TimeSplines: Sketch-Based Authoring of Flexible and Idiosyncratic Timelines</h1>
+    <h1 id="authors">
+        Anna Offenwanger<sup>1</sup>,
+        Mattew Brehmer<sup>2</sup>,
+        Fanny Chevalier<sup>3</sup>,
+        Theophanis Tsandilas<sup>1</sup>
+    </h1>
+    <h1 id="affiliations"><sup>1</sup> Universite Paris-Saclay, CNRS, Inria, LRI, <sup>2</sup> Tableau Research,
+        <sub>3</sub> University of Toronto,
+    </h1>
+
+    <p id="abstract">
+        Timelines are essential for visually communicating chronological narratives and reflecting on the personal and
+        cultural significance of historical events. Existing visualization tools tend to support conventional linear
+        representations, but fail to capture personal idiosyncratic conceptualizations of time. In response, we built
+        <b>TimeSplines</b>, a visualization authoring tool that allows people to sketch multiple free-form temporal axes
+        and
+        populate them with heterogeneous time-oriented data via incremental and lazy data binding. Authors can bend,
+        compress, and stretch temporal axes to emphasize or de-emphasize intervals based on their personal importance;
+        they can also annotate the axes with text and figurative elements to convey contextual information. The results
+        of two user studies show how people appropriate the concepts in TimeSplines to express their own
+        conceptualization of time. Our curated gallery of images demonstrates the expressive potential of our approach.
+        <br>
+
+    <p style="text-align:justify; margin-left:20%; width:60%;font-size:24px;">
+        Anna Offenwanger, Matthew Brehmer, Fanny Chevalier, Theophanis Tsandilas.
+        <b>TimeSplines: Sketch-Based Authoring of Flexible and Idiosyncratic Timelines</b>
+        Submitted to <i>Proceedings of IEEE VIS 2023</i>.
+    </p>
+    <br>
+
+    <div id="timesplines-links">
+        <a href="app.html"> TimeSplines Application</a> |
+        <a href="https://github.com/exsitu-projects/timesplines">TimeSplines Code</a>
+    </div>
+
+    <br>
+
+    <h1>Video Figure</h1>
+    <br>
+    <video id="video-figure" controls>
+        <source src="supmats/video-figure.mp4">
+    </video>
+
+    <br><br><br>
+
+    <hr>
+    <div id="mats-navbar">
+        <a href="supmats/timesplines-paper.pdf">Paper</a> |
+        <a href="#gallery">Gallery</a> |
+        <a href="#apparatus">Study Aparatus</a> |
+        <a href="#tutorials">Tutorial Videos</a>
+
+    </div>
+    <hr>
+
+    <br><br><br>
+
+
+    <div id="evaluation">
+        <h1>Evaluation</h1>
+        <p>
+            We evaluated TimeSplines using three established methods:
+            a reproduction study with 12 participants to evaluate the system's usability;
+            a free-form evaluation with four designers and visualization researchers
+            to evaluate different use cases and creative workflows;
+            and a gallery of visualizations produced with TimeSplines to demonstrate the expressive power of our
+            approach.
+        </p>
+
+        <h1><a name="gallery"></a>Gallery</h1>
+
+        <div class="gallery">
+
+
+            <div class="gallery-img">
+                <a target="blank" href="gallery/img/MusicListening.png">
+                    <img src="gallery/img/MusicListening.png">
+                    <p>
+                        Visualization of Music Listening
+                        <br><br>
+                        This visualization shows a persons music listening habits in 2022. It contains songs added to
+                        playlists on various music sources, as well as inforation about what was playing on a favorite
+                        station.
+                        <br><br>
+                        &#128444; Click for full size image
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="app.html?viz=MondaysInJanuary">
+                    <img src="gallery/img/MondaysInJanuary.png">
+                    <p>
+                        Visualization of work done on Mondays in January, 2022
+                        <br><br>
+                        This visualization shows activities performed on work days in January, and their relative
+                        productivity values.
+                        <br><br>
+                        &#9998; Click to open in TimeSplines
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="app.html?viz=ForrestGump">
+                    <img src="gallery/img/ForrestGump.png">
+                    <p>
+                        A visualization of the story of Forrest Gump
+                        <br><br>
+                        This visualization shows the events in the story of Forrest Gump, along with some of the
+                        historical
+                        events that occur during the film, illustrated with hand drawn images. This visuliation
+                        demonstates
+                        the use of inset timelines.
+                        <br><br>
+                        &#9998; Click to open in TimeSplines
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="app.html?viz=FictionalFitbit">
+                    <img src="gallery/img/FictionalFitbit.png">
+                    <p>
+                        Visualization of some fictional sample FitBit data.
+                        <br><br>
+                        This visualization demonstartes the use of multiple datasets, along with the use of segmented
+                        timelines. The segmented timeliens both enable the data to fit in the graph, and separate the
+                        two
+                        narrative segments.
+                        <br><br>
+                        &#9998; Click to open in TimeSplines
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="gallery/img/AcademicCareer.png">
+                    <img src="gallery/img/AcademicCareer.png">
+                    <p>
+                        Visualization of an Academic Career
+                        <br><br>
+                        This visualization shows an academic career. It shows events of significance over the course of
+                        the
+                        3 years. There are three sets of numeric data: mood ratings (red), work hours (blue), and one
+                        categorical dataset: participant recruitment (white/black).
+                        <br><br>
+                        &#128444; Click for full size image
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="app.html?viz=FictionalBiography">
+                    <img src="gallery/img/FictionalBiography.png">
+                    <p>
+                        A Fictional Biography
+                        <br><br>
+                        This visualization demonstrates the use of a segmented timeline, and the ability to annotate
+                        life
+                        sections.
+                        <br><br>
+                        &#9998; Click to open in TimeSplines
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="app.html?viz=MarkTwainMneumonic">
+                    <img src="gallery/img/MarkTwainMnemonic.png">
+                    <p>
+                        Mark Twain's Mneumonic
+                        <br><br>
+                        A reproduction of Mark Twain's mneumonic for making
+                        history dates stick.
+                        <br><br>
+                        &#9998; Click to open in TimeSplines
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="gallery/img/MeAndMyDaughter.png">
+                    <img src="gallery/img/MeAndMyDaughter.png">
+                    <p>Me and My Daughter
+                        <br><br>
+                        A visualization of a biogrpahy. Features custom temporal indicator.
+                        <br><br>
+                        &#128444; Click for full size image
+                    </p>
+                </a>
+            </div>
+
+            <div class="gallery-img">
+                <a target="blank" href="app.html?viz=WeinmannFamilyHistory">
+                    <img src="gallery/img/WeinmannFamilyHistory.png">
+                    <p>
+                        Weinmann Family History
+                        <br><br>
+                        A family history graph that covers 400 years, features two intersecting timelines, one for
+                        world history, one for family history. The two graphs intersect at time points where
+                        world history impacts family history.
+                        <br><br>
+                        &#9998; Click to open in TimeSplines (large file, takes a bit to load)
+                    </p>
+                </a>
+            </div>
+
+
+        </div>
+
+        <h2>Participant Results</h2>
+
+        <div class="gallery">
+            <div class="gallery-img">
+                <a target="blank" href="gallery/img/BikingElevation-P13.png">
+                    <img src="gallery/img/BikingElevation-P13.png">
+                    <p>
+                        Biking Elevation
+                        <br><br>
+                        This visualization shows the path of a bike ride through time and space, with the elevation data
+                        making a sort of hill on top of the graph. The author uses loops to indiate non-motion in the
+                        timeline, and show affective elements on the path, such as the sweat drops for hard climbs, and
+                        a darked patch to emphasize the switchback nature of the path.
+                        <br><br>
+                        &#128444; Click for full size image
+                    </p>
+                </a>
+            </div>
+            <div class="gallery-img">
+                <a target="blank" href="gallery/img/DanceData-P14.png">
+                    <img src="gallery/img/DanceData-P14.png">
+                    <p>
+                        IMU Dance Data
+                        <br><br>
+                        This visualization placed IMU data from a wrist tracker that was worn during a series of dance
+                        classes. The lemniscate is a metaphore for the quality of motion targeted during the class. The
+                        lemniscates on the right are a priliminary cross sections of a 3D physicalization of this data.
+                        <br><br>
+                        &#128444; Click for full size image
+                    </p>
+                </a>
+            </div>
+            <div class="gallery-img">
+                <a target="blank" href="app.html?viz=ForrestGumpP15">
+                    <img src="gallery/img/ForrestGump-P15.png">
+                    <p>
+                        Life Path of Forrest Gump
+                        <br><br>
+                        This visualization shows the story of forrest gump using the metaphore of a 'life path'. It uses
+                        the same dataset as the Forrest Gump visualization above, but trims it down to the more salient
+                        elements. The red dots could be used to highlight important points, and are included as a
+                        sketchy example of how that might work.
+                        <br><br>
+                        &#9998; Click to open in TimeSplines
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h1><a name="apparatus"></a>Study Aparatus</h1>
+
+    <div class="study">
+        <h2>Study 1: Reproduction Study</h2>
+        <a href="supmats/SONDAGES INRIA - TimeALine Evaluation demographics survey.pdf">Download Survey</a> The survey
+        provided to all participants.</br>
+
+        <h2>Study 1: Reproduction Study</h2>
+
+        <p>
+            We conducted a reproduction study with 12 participants to evaluate the systems usability, i.e. if users can
+            quickly understand how to use the tools features. From the reproduction study, we found participants were
+            able to understand and sometimes appropriate the concepts of idiosyncratic representations within
+            TimeSplines, such as by creating a number of variations of the line they were asked to reproduce.
+        </p>
+
+        <a href="/supmats/Supplementary Materials_ Study 1 Protocol.pdf">Download Study 1 Protocol</a> Study protocol
+        that was used for conducting the study.</br>
+        <a href="/supmats/Supplementary Materials_ Study 1 Tasks Deck.pdf">Download Study 1 Task Deck</a> Task deck that
+        participants were asked to work through. The tutorials and data can be viewed <a href="#tutorials">below</a>
+        <br>
+
+    </div>
+    <h3>Resulting Reproductions</h3>
+    <div class="gallery">
+        <div class="gallery-img">
+            <a target="blank" href="app.html?viz=FictionalRunning">
+                <img src="gallery/img/FictionalRunning.png">
+                <p>
+                    A fictional visualization of Running Data
+                    <br><br>
+                    The example participants were asked to reproduce. It's a fictional biography focusing on a
+                    single persons running data, and events associated with their running hobby.
+                    <br><br>
+                    &#9998; Click to open in TimeSplines
+                </p>
+            </a>
+        </div>
+    </div>
+    <br><br>
+
+    <div id="study1gallery">
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P1 - result.png">
+                <img src="gallery/study1/P1 - result.png">
+                <p>P1</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P2 - result.png">
+                <img src="gallery/study1/P2 - result.png">
+                <p>P2</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P3 - result.png">
+                <img src="gallery/study1/P3 - result.png">
+                <p>P3</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P4 - result.png">
+                <img src="gallery/study1/P4 - result.png">
+                <p>P4</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P5 - result.png">
+                <img src="gallery/study1/P5 - result.png">
+                <p>P5</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P6 - result.png">
+                <img src="gallery/study1/P6 - result.png">
+                <p>P6</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P7 - result.png">
+                <img src="gallery/study1/P7 - result.png">
+                <p>P7</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P8 - result.png">
+                <img src="gallery/study1/P8 - result.png">
+                <p>P8</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P9 - result.png">
+                <img src="gallery/study1/P9 - result.png">
+                <p>P9</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P10 - result.png">
+                <img src="gallery/study1/P10 - result.png">
+                <p>P10</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P11 - result.png">
+                <img src="gallery/study1/P11 - result.png">
+                <p>P11</p>
+            </a>
+        </div>
+        <div class="study1img">
+            <a target="blank" href="gallery/study1/P12 - result.png">
+                <img src="gallery/study1/P12 - result.png">
+                <p>P12</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="study">
+        <h2>Study 2: Free-form Study</h2>
+
+        <p>
+            We conducted a reproduction study with 12 participants to evaluate the systems usability, i.e. if users can
+            quickly understand how to use the tools features. From the reproduction study, we found participants were
+            able to understand and sometimes appropriate the concepts of idiosyncratic representations within
+            TimeSplines, such as by creating a number of variations of the line they were asked to reproduce.
+        </p>
+
+        <a href="/supmats/Supplementary Materials_ Study 2 Protocol.pdf">Download Study 2 Protocol</a> Study protocol
+        that was used for conducting the study.</br>
+        <a href="/supmats/Supplementary Materials_ Study 2 Tutorial Deck.pdf">Download Study 2 Tutorial Deck</a>
+        Tutorial deck that participants were provided to assist with learning the system. The tutorials and data can be
+        viewed <a href="#tutorials">below</a><br>
+
+        <h3>Inspirational Image</h2>
+            <p>Study 2 participants were walked through the following image to give an idea what sort of visualizations
+                the
+                tool was targeted at, without biasing their thinking by showing them additional visualizations created
+                in
+                the system. The image is shown at reduced resolution here.</p>
+            <div id="inspiration"><img src="supmats/inspirations_reduced_size.png"></div>
+
+            <br>
+            <br>
+
+            <h1><a name="tutorials"></a>Tutorials and Sample Data</h1>
+            <p> In both studies participants were provided with the following tutorials and datasets</p>
+
+            <a href="supmats/Running Events - Task 1 Data - Running Events.csv">Running Event Data</a></br>
+            <a href="supmats/Running Data - Task 5 Data - Running Data Log.csv">Running Statistical Data</a></br>
+
+
+            <br>
+            <h2>Tutorial 1</h2>
+            <video id="video-figure" controls>
+                <source src="supmats/TutorialPart1.mp4">
+            </video>
+            <h2>Tutorial 2</h2>
+            <video id="video-figure" controls>
+                <source src="supmats/TutorialPart2.mp4">
+            </video>
+
+
+    </div>
+
+    <br><br><br>
+
+
+
+</body>
+
+</html>

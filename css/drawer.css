@@ -1,0 +1,105 @@
+#drawer-side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    width: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#drawer-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+#drawer-resize-strip {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    float: left;
+    height: 100%;
+    width: 10px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.drawer-close {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='15px' height='16px' viewBox='0 0 15 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='2.-Menu' transform='translate(-15.000000, -13.000000)' stroke='%23000000'%3E%3Cg id='Group' transform='translate(15.000000, 13.521000)'%3E%3Cpath d='M0,0.479000129 L15,14.2971819' id='Path-3'%3E%3C/path%3E%3Cpath d='M0,14.7761821 L15,-1.24344979e-14' id='Path-3'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    width: 15px;
+    height: 15px;
+}
+
+#drawer-content-wrapper {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    float: left;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 2px 6px #777;
+}
+
+.drawer-content {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    flex-grow: 1;
+    padding: 1.5rem;
+}
+
+.drawer.is-active {
+    display: block;
+}
+
+.drawer-button {
+    max-height: 30px;
+}
+
+#lens-div {
+    box-shadow: 0 2px 6px #777;
+}
+
+#lens-view-header {
+    text-align: center;
+    outline-style: solid;
+    outline-width: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 3px;
+}
+
+#lens-view {
+    max-height: 230px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#table-list {
+    padding-top: 0px;
+    overflow-x: auto;
+}

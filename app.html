@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="lib/farbtastic/farbtastic.css" rel="stylesheet">
+    <link href="lib/jspreadsheet_v4_ce/jspreadsheet.css" rel="stylesheet">
+    <link href="lib/jspreadsheet_v4_ce/jsuites.css" rel="stylesheet">
+
+    <script src="lib/papaparse.min.js" charset="utf-8"></script>
+    <script src="lib/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script src="lib/d3.v7.min.js" charset="utf-8"></script>
+    <script src="lib/farbtastic/farbtastic.js" charset="utf-8"></script>
+    <script src="lib/jspreadsheet_v4_ce/index.js" charset="utf-8"></script>
+    <script src="lib/jspreadsheet_v4_ce/jsuites.js" charset="utf-8"></script>
+
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/drawer.css" rel="stylesheet">
+    <link href="css/image-viewer.css" rel="stylesheet">
+
+    <script src="js/constants.js" charset="utf-8"></script>
+    <script src="js/data_structures.js" charset="utf-8"></script>
+    <script src="js/utility_data.js" charset="utf-8"></script>
+    <script src="js/utility_path.js" charset="utf-8"></script>
+    <script src="js/utility_math.js" charset="utf-8"></script>
+    <script src="js/utility_model.js" charset="utf-8"></script>
+    <script src="js/interface_utility/mouse_drop_shadow.js" charset="utf-8"></script>
+    <script src="js/interface_utility/line_highlight.js" charset="utf-8"></script>
+    <script src="js/interface_utility/text_input.js" charset="utf-8"></script>
+    <script src="js/interface_utility/canvas_mask.js" charset="utf-8"></script>
+    <script src="js/interface_utility/shadow_filter.js" charset="utf-8"></script>
+    <script src="js/interface_utility/resize_controller.js" charset="utf-8"></script>
+    <script src="js/interface_utility/tooltip.js" charset="utf-8"></script>
+    <script src="js/file_handling.js" charset="utf-8"></script>
+    <script src="js/drawer_controller.js" charset="utf-8"></script>
+    <script src="js/table_view_controller.js" charset="utf-8"></script>
+    <script src="js/model_controller.js" charset="utf-8"></script>
+    <script src="js/version_controller.js" charset="utf-8"></script>
+    <script src="js/brush_controller.js" charset="utf-8"></script>
+    <script src="js/line_drawing_controller.js" charset="utf-8"></script>
+    <script src="js/eraser_controller.js" charset="utf-8"></script>
+    <script src="js/deform_controller.js" charset="utf-8"></script>
+    <script src="js/smooth_controller.js" charset="utf-8"></script>
+    <script src="js/line_view_controller.js" charset="utf-8"></script>
+    <script src="js/time_pin_controller.js" charset="utf-8"></script>
+    <script src="js/data_point_controller.js" charset="utf-8"></script>
+    <script src="js/text_controller.js" charset="utf-8"></script>
+    <script src="js/image_controller.js" charset="utf-8"></script>
+    <script src="js/lens_controller.js" charset="utf-8"></script>
+    <script src="js/stroke_controller.js" charset="utf-8"></script>
+    <script src="js/color_brush_controller.js" charset="utf-8"></script>
+    <script src="js/selection_controller.js" charset="utf-8"></script>
+    <script src="js/workspace_controller.js" charset="utf-8"></script>
+    <script src="js/analysis_functions.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="svg_container"></div>
+
+    <section id="data-drawer">
+        <div id="drawer-side-menu">
+            <input id="datasheet-toggle-button" class="menu-button" type="image"
+                src="img/datasheet_drawer_toggle.png" />
+
+            <img src="img/divider_line.png" class="menu-divider" />
+            <input id="undo-button" class="tool-button menu-button" type="image" src="img/undo_button.png" />
+            <input id="redo-button" class="tool-button menu-button" type="image" src="img/redo_button.png" />
+            <input id="upload-button" class="tool-button menu-button" type="image" src="img/upload_button.png" />
+            <input id="download-button" class="tool-button menu-button" type="image"
+                src="img/download_button_red.png" />
+
+            <img src="img/divider_line.png" class="menu-divider" />
+            <input id="line-drawing-button" class="tool-button menu-button" type="image"
+                src="img/time_pencil_button.png" />
+            <input id="line-manipulation-button" class="tool-button menu-button" type="image"
+                src="img/line_manipulation_button.png" />
+            <input id="scissors-button" class="tool-button menu-button" type="image" src="img/scissors_button.png" />
+            <input id="toggle-timeline-style-button" class="tool-button menu-button" type="image"
+                src="img/toggle_timeline_style_button.png" />
+
+            <img src="img/divider_line.png" class="menu-divider" />
+            <input id="color-brush-button" class="tool-button menu-button" type="image"
+                src="img/color_brush_button.png" />
+            <input id="text-button" class="tool-button menu-button" type="image" src="img/text_button.png" />
+            <input id="pin-button" class="tool-button menu-button" type="image" src="img/pin_button.png" />
+            <input id="image-button" class="tool-button menu-button" type="image" src="img/image_button.png" />
+
+            <img src="img/divider_line.png" class="menu-divider" />
+            <input id="selection-button" class="tool-button menu-button" type="image" src="img/selection_button.png" />
+            <input id="eraser-button" class="tool-button menu-button" type="image" src="img/eraser_button.png" />
+            <input id="color-bucket-button" class="tool-button menu-button" type="image"
+                src="img/color_bucket_button.png" />
+
+            <img src="img/divider_line.png" class="menu-divider" />
+            <input id="lens-button" class="tool-button menu-button" type="image" src="img/lens_button.png" />
+            <input id="panning-button" class="tool-button menu-button" type="image" src="img/panning_button.png" />
+        </div>
+
+        <div id="drawer-wrapper">
+            <div id="drawer-resize-strip">
+            </div>
+            <div id="drawer-content-wrapper">
+                <div class="drawer-header">
+                    <div class="drawer-title">
+                        <input id="add-datasheet-button" class="drawer-button" type="image"
+                            src="img/add_datasheet.png" />
+                        <input id="upload-datasheet-button" class="drawer-button" type="image"
+                            src="img/upload_datasheet.png" />
+                    </div>
+                    <button class="close-button drawer-close" data-drawer-close aria-label="Close Drawer"></button>
+                </div>
+                <br>
+                <div class="drawer-content" id="table-list">
+                </div>
+
+                <div id="lens-div">
+                    <div id="lens-view-header">Lens View</div>
+                    <div class="drawer-content" id="lens-view"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sub-menu-wrapper">
+        <div id="color-brush-button-sub-menu" class="sub-menu">
+            <input id="color-brush-button-color-picker" class="sub-menu-button" type="image" src="img/color_set.png" />
+            <input id="color-brush-button-eyedropper" class="tool-button sub-menu-button" type="image"
+                src="img/eye_dropper.png" />
+            <input id="color-brush-button-shrink" class="tool-button sub-menu-button" type="image"
+                src="img/color_brush_shrink_button.png" />
+            <input id="color-brush-button-grow" class="tool-button sub-menu-button" type="image"
+                src="img/color_brush_grow_button.png" />
+        </div>
+
+        <div id="color-bucket-button-sub-menu" class="sub-menu">
+            <input id="color-bucket-button-color-picker" class="sub-menu-button" type="image" src="img/color_set.png" />
+            <input id="color-bucket-button-eyedropper" class="tool-button sub-menu-button" type="image"
+                src="img/eye_dropper.png" />
+        </div>
+
+        <div id="line-drawing-button-sub-menu" class="sub-menu">
+            <input id="line-drawing-button-color-picker" class="sub-menu-button" type="image" src="img/color_set.png" />
+            <input id="line-drawing-button-eyedropper" class="tool-button sub-menu-button" type="image"
+                src="img/eye_dropper.png" />
+        </div>
+
+        <div id="line-manipulation-button-sub-menu" class="sub-menu">
+            <input id="line-manipulation-button-deform" class="tool-button sub-menu-button" type="image"
+                src="img/deform_button.png" />
+            <input id="line-manipulation-button-smooth" class="tool-button sub-menu-button" type="image"
+                src="img/smooth_button.png" />
+        </div>
+
+        <div id="eraser-button-sub-menu" class="sub-menu">
+            <input id="eraser-button-timeline" class="tool-button sub-menu-button" type="image"
+                src="img/timeline_eraser_button.png" />
+            <input id="eraser-button-stroke" class="tool-button sub-menu-button" type="image"
+                src="img/stroke_eraser_button.png" />
+            <input id="eraser-button-point" class="tool-button sub-menu-button" type="image"
+                src="img/data_point_eraser_button.png" />
+            <input id="eraser-button-text" class="tool-button sub-menu-button" type="image"
+                src="img/text_eraser_button.png" />
+            <input id="eraser-button-pin" class="tool-button sub-menu-button" type="image"
+                src="img/pin_eraser_button.png" />
+            <input id="eraser-button-image" class="tool-button sub-menu-button" type="image"
+                src="img/image_eraser_button.png" />
+        </div>
+
+        <div id="upload-button-sub-menu" class="sub-menu">
+            <input id="upload-button-folder" class="tool-button sub-menu-button" type="image"
+                src="img/folder_button.png" />
+            <input id="upload-button-json" class="tool-button sub-menu-button" type="image" src="img/json_button.png" />
+        </div>
+
+        <div id="download-button-sub-menu" class="sub-menu">
+            <input id="download-button-folder" class="tool-button sub-menu-button" type="image"
+                src="img/folder_button_red.png" />
+            <input id="download-button-json" class="tool-button sub-menu-button" type="image"
+                src="img/json_button.png" />
+            <input id="download-button-svg" class="tool-button sub-menu-button" type="image" src="img/svg_button.png" />
+            <input id="download-button-png" class="tool-button sub-menu-button" type="image" src="img/png_button.png" />
+        </div>
+    </section>
+
+    <div id="link-button-div" class="mobile-menu">
+        <input id="link-button" class="tool-button menu-button" type="image" src="img/link_button.png" />
+    </div>
+
+    <div id="text-context-menu-div" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <input id="toggle-font-button" class="tool-button menu-button" type="image"
+                src="img/text_font_change_button.png" />
+            <input id="toggle-font-weight-button" class="tool-button menu-button" type="image"
+                src="img/text_bold_button.png" />
+            <input id="toggle-font-italics-button" class="tool-button menu-button" type="image"
+                src="img/text_italics_button.png" />
+            <input id="increase-font-size-button" class="tool-button menu-button" type="image"
+                src="img/text_size_increase_button.png" />
+            <input id="decrease-font-size-button" class="tool-button menu-button" type="image"
+                src="img/text_size_decrease_button.png" />
+            <input id="delete-text-button" class="tool-button menu-button" type="image" src="img/delete_button.png" />
+        </div>
+    </div>
+
+    <div id="image-context-menu-div" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <input id="image-link-button" class="tool-button menu-button" type="image" src="img/link_button.png" />
+            <input id="image-unlink-button" class="tool-button menu-button" type="image"
+                src="img/break_link_button.png" />
+            <input id="image-time-edit-button" class="tool-button menu-button" type="image"
+                src="img/edit_time_button.png" />
+            <input id="delete-image-button" class="tool-button menu-button" type="image" src="img/delete_button.png" />
+        </div>
+    </div>
+
+    <div id="axis-context-menu-div" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <input id="toggle-data-style-button" class="tool-button menu-button" type="image"
+                src="img/toggle_data_style_button.png" />
+            <input id="dynamic-normals-axis-button" class="tool-button menu-button" type="image"
+                src="img/data_normals_dynamic.png" />
+            <input id="fixed-normals-axis-button" class="tool-button menu-button" type="image"
+                src="img/data_normals_fixed.png" />
+            <input id="delete-axis-button" class="tool-button menu-button" type="image" src="img/delete_button.png" />
+        </div>
+    </div>
+
+    <div id="mode-indicator-div"></div>
+
+    <div id="color-picker-div" style="display: none;">
+        <div id="color-picker-wrapper"></div>
+        <input type="text" id="color-picker-input" /><br>
+        <input type="range" min="0" max="255" value="255" id="opacity-input">
+    </div>
+
+    <div id="image-viewer">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="full-image">
+        <video class="modal-content" id="video-viewer" controls preload="true" loop="true" autoplay="true"></video>
+    </div>
+
+    <textarea id="input-box" type="text" style="top: -400px; left: -200px;"></textarea>
+
+
+    <div id="extra-functions-div" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <button id="extra-json-to-png">Create PNG Trace</button>
+            <button id="extra-versioning-to-json">Create JSON Trace</button>
+            <button id="create-workspace-viz">Create Workspace Viz</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+    "name": "timealine",
+    "version": "1.0.0",
+    "dependencies": {
+        "chai": "^4.3.4",
+        "chai-fs": "^2.0.0",
+        "fs": "0.0.1-security",
+        "mocha": "^9.1.3",
+        "nyc": "^15.1.0",
+        "rewire": "^6.0.0",
+        "vm": "^0.1.0"
+    },
+    "scripts": {
+        "test": "mocha --timeout=3000",
+        "testOnly": "mocha -g \"filter text\" --timeout=3000",
+        "coverage": "nyc --reporter=html --reporter=text mocha --timeout=3000",
+        "coverageOnly": "nyc --reporter=html --reporter=text mocha -g \"filter text\" --timeout=3000"
+    }
+}
