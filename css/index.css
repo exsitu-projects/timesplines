@@ -51,7 +51,8 @@ body {
     font-size: 24px;
 }
 
-.gallery, #reproduction-original {
+.gallery,
+#reproduction-original {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -128,7 +129,6 @@ body {
 
 .study1img img {
     object-fit: scale-down;
-    
     height: 200px;
     width: 200px;
     object-position: center;
@@ -156,6 +156,27 @@ body {
 #inspiration {
     margin-right: 20%;
 }
+
 #inspiration img {
     width: 100%;
+}
+
+.illustration-img {
+    width: 60%;
+}
+
+
+#vis {
+    text-align: left;
+    margin-left: 20%
+}
+
+#vis>p {
+    text-align: justify;
+    width: 60%;
+    font-size: 14px;
+}
+
+#vis>iframe {
+    max-width: 600px;
 }
