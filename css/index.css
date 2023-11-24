@@ -38,6 +38,7 @@ body {
 
 .video-figure {
     width: 60%;
+    aspect-ratio: 16/9;
 }
 
 #mats-navbar {
